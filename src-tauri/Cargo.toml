@@ -1,0 +1,21 @@
+[package]
+name = "stardew-sync"
+version = "0.0.0"
+description = "An application for Linux/Windows/Mac to sync saves with multiple LAN clients"
+authors = ["Adam Podkowinski"]
+license = ""
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.2", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.2", features = ["shell-open"] }
+file-serve = "0.2.1"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
